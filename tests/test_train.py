@@ -42,7 +42,11 @@ def test_train_returns_float(tmp_path):
     """Kiem tra ham train() tra ve mot so thuc nam trong [0.0, 1.0]."""
     train_path, eval_path = _make_temp_data(tmp_path)
 
-    acc = train({"n_estimators": 10, "max_depth": 3}, ...)
+    acc = train(
+        {"n_estimators": 10, "max_depth": 3},
+        data_path=train_path,
+        eval_path=eval_path,
+    )
 
     assert isinstance(acc, float)
     assert 0.0 <= acc <= 1.0

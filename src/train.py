@@ -29,7 +29,9 @@ def train(
     y_train = df_train["target"]
     X_eval = df_eval.drop(columns=["target"])
     y_eval = df_eval["target"]
-
+    
+    mlflow.set_tracking_uri("file:./mlruns")
+    mlflow.set_experiment("default")
     with mlflow.start_run():
 
         # TODO 3: Ghi nhận các siêu tham số
