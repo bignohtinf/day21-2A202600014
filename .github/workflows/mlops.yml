@@ -2,7 +2,7 @@ name: MLOps Pipeline (AWS Version)
 
 on:
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - 'data/**.dvc'
       - 'src/**.py'
